@@ -15,7 +15,15 @@ def page_data_visualization_body():
     st.success(
         f"A study conducted using conventional data analysis showing how to "
         f"visually differentiate a cherry leaf that is healthy from one that "
-        f"contains powdery mildew."
+        f"contains powdery mildew.\n\n"
+        f"**Hypothesis**: The leaves of plants that contain powdery mildew "
+        f"have clear signs of infection, typically white powdery patches of "
+        f"fungus on the surface of the leaf, differentiating them from "
+        f"healthy leaves.\n\n"
+        f"**How to validate**: Conventional data analysis can be used to "
+        f"conduct a study to visually differentiate a healthy cherry leaf "
+        f"from one that contains powdery mildew. An average image study and "
+        f"an image montage can be used in this investigation."
     )
 
     st.info(
@@ -128,7 +136,6 @@ def page_data_visualization_body():
             plt.tight_layout()
 
             st.pyplot(fig=fig)
-            # plt.show()
 
         else:
             print("The label you selected doesn't exist.")
