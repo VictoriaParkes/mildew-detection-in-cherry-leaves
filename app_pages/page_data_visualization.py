@@ -52,7 +52,7 @@ def page_data_visualization_body():
         f"and spores on leaves and fruit."
     )
 
-    version = "v3"
+    version = "v2"
     if st.checkbox("Difference between average and variability image"):
         avg_healthy = plt.imread(
             f"outputs/{version}/avg_var_healthy.png"
