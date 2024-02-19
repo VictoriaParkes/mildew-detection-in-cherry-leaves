@@ -2,7 +2,7 @@ import streamlit as st
 
 
 def page_project_hypothesis_body():
-    st.write("### Project Hypotheses")
+    st.write("## Project Hypotheses")
 
     st.warning(f"**Hypothesis 1**: The leaves of plants that contain powdery "
                f"mildew have clear signs of infection, typically white "

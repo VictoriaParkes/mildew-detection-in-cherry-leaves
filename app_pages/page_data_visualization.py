@@ -11,11 +11,11 @@ import random
 
 
 def page_data_visualization_body():
-    st.write("### Leaf Visualization Study")
+    st.write("## Leaf Visualization Study")
 
     st.success(
-        f"A study conducted using conventional data analysis showing how to "
-        f"visually differentiate a cherry leaf that is healthy from one that "
+        f"A study conducted using conventional data analysis to visually"
+        f" differentiate a cherry leaf that is healthy from one that "
         f"contains powdery mildew.\n\n"
         f"**Hypothesis**: The leaves of plants that contain powdery mildew "
         f"have clear signs of infection, typically white powdery patches of "

@@ -6,11 +6,10 @@ from src.machine_learning.evaluate_clf import load_test_evaluation
 
 
 def page_model_performance_body():
-    st.write("### Model Performance")
 
     version = "v2"
 
-    st.write("### Train, Validation and Test Set: Labels Frequencies")
+    st.write("## Train, Validation and Test Set: Labels Frequencies")
     st.write(f"The data was split into 3 sub-datasets to help prevent over or "
              f"underfitting during ML model training, as follows:")
 
@@ -30,7 +29,7 @@ def page_model_performance_body():
     )
     st.write("---")
 
-    st.write("### Model Training History")
+    st.write("## Model Training History")
     col1, col2 = st.beta_columns(2)
     with col1:
         model_acc = plt.imread(f"outputs/{version}/model_training_acc.png")
@@ -42,6 +41,8 @@ def page_model_performance_body():
              f"both the loss and accuracy plots for training and validation "
              f"data follow a similar path and are close to each other.")
     st.write("---")
+
+    st.write("## Model Performance")
 
     st.write("### Confusion Matrix")
 
