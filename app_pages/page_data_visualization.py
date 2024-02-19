@@ -9,6 +9,7 @@ from matplotlib.image import imread
 import itertools
 import random
 
+
 def page_data_visualization_body():
     st.write("### Leaf Visualization Study")
 
@@ -73,7 +74,7 @@ def page_data_visualization_body():
             avg_healthy, caption="Healthy Leaf - Average and Variability"
         )
         st.image(
-            avg_powdery_mildew, caption="Powdery Mildew Containing Leaf - "
+            avg_powdery_mildew, caption=f"Powdery Mildew Containing Leaf - "
             f"Average and Variability"
         )
         st.write("---")
@@ -89,14 +90,14 @@ def page_data_visualization_body():
             f"powdery mildew cherry leaves did not highlight patterns where "
             f"we could intuitively differentiate one from another."
         )
-        
+
         st.image(
             diff_between_avgs, caption="Difference between average images"
         )
         st.write("---")
-    
+
     def image_montage(
-        dir_path, label_to_display, nrows, ncols, figsize=(15,10)
+        dir_path, label_to_display, nrows, ncols, figsize=(15, 10)
     ):
         sns.set_style("white")
         labels = os.listdir(dir_path)
@@ -106,7 +107,7 @@ def page_data_visualization_body():
 
             # checks if your montage space is greater than subset size
             # how many images in that folder
-            images_list = os.listdir(dir_path+'/'+ label_to_display)
+            images_list = os.listdir(dir_path + '/' + label_to_display)
             if nrows * ncols < len(images_list):
                 img_idx = random.sample(images_list, nrows * ncols)
             else:
@@ -118,14 +119,20 @@ def page_data_visualization_body():
                 return
 
             # create list of axes indices based on nrows and ncols
-            list_rows= range(0,nrows)
-            list_cols= range(0,ncols)
-            plot_idx = list(itertools.product(list_rows,list_cols))
+            list_rows = range(0, nrows)
+            list_cols = range(0, ncols)
+            plot_idx = list(itertools.product(list_rows, list_cols))
 
             # create a Figure and display images
-            fig, axes = plt.subplots(nrows=nrows,ncols=ncols, figsize=figsize)
-            for x in range(0,nrows*ncols):
-                img = imread(dir_path + '/' + label_to_display + '/' + img_idx[x])
+            fig, axes = plt.subplots(
+                nrows=nrows,
+                ncols=ncols,
+                figsize=figsize
+            )
+            for x in range(0, nrows*ncols):
+                img = imread(
+                    dir_path + '/' + label_to_display + '/' + img_idx[x]
+                )
                 img_shape = img.shape
                 axes[plot_idx[x][0], plot_idx[x][1]].imshow(img)
                 axes[plot_idx[x][0], plot_idx[x][1]].set_title(
@@ -151,15 +158,17 @@ def page_data_visualization_body():
             "* To refresh the montage, click on the 'Create Montage' button"
         )
         my_data_dir = 'inputs/dataset/cherry-leaves'
-        labels = os.listdir(my_data_dir+ '/validation')
+        labels = os.listdir(my_data_dir + '/validation')
         label_to_display = st.selectbox(
-            label="Select label", options=labels, index=0
+            label="Select label",
+            options=labels, index=0
         )
-        if st.button("Create Montage"):      
+        if st.button("Create Montage"):
             image_montage(
-                dir_path= my_data_dir + '/validation',
-                label_to_display=label_to_display,nrows=8,
+                dir_path=my_data_dir + '/validation',
+                label_to_display=label_to_display,
+                nrows=8,
                 ncols=3,
-                figsize=(10,25)
+                figsize=(10, 25)
             )
         st.write("---")
