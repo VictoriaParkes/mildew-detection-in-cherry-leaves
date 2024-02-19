@@ -49,6 +49,69 @@ To log into the Heroku toolbelt CLI:
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
+## Development Process
+
+This project was developed using the Cross Industry Standard Process for Data Mining (CRISP-DM) workflow, as a set of  guidelines to plan and organise the project. CRISP-DM is a process model with six phases covering the full data science life cycle; business understanding, data understanding, data preparation, modelling, evaluation and deployment. 
+
+### Phase 1: Business Understanding
+
+The business objective relating to this project is to ensure the client will not supply the market with a product of compromised quality. The clients current process of identifying cherry trees with powdery mildew is not sufficient to reliably detect the presence of mildew across the whole plantation of crops. A quicker and more reliable method of identifying the presence of powdery mildew on cherry leaves would help the client reach their business objective and ensure their product is of high quality.
+
+The business requirements were agreed upon with the client and will form the basis of the overall goals of this project. (See business requirements)
+
+A successful project outcome from the perspective of the client would be for the project to produce the following:
+* A study showing how to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+* The capability to predict if a cherry leaf is healthy or contains powdery mildew.
+* The performance of the predictions made have a degree of 97% accuracy.
+
+The value of this project to the client would be a quicker and more reliable process for identifying powdery mildew in their cherry plantation crop, resulting in earlier treatment of the infected plants and reducing the likelihood of an inferior product being supplied to the market. Also, the resulting images of the study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew will help familiarise employees with the typical signs of mildew infection. There would be a reduced need for staff performing the mildew identifying process to have the expertise and experience required for the current manual verification process. However, relying solely on the system delivered by this project could result in misdiagnosis as the model could become invalid, for example if other factors affect the cherry crop, such as disease with similar visual signs. Continuous monitoring of the deployed projects performance will minimise the risk of invalid predictions.
+
+The resources required for this project include:
+* Data analysis software to process the data and analyse the performance of the system developed to satisfy business requirements. (See techs used)
+* Development environment in which to analyse data and produce the required project deliverables. (See tech)
+* Computing resources, such as sufficient GPU, capable of performing deep learning tasks.
+* Sufficient labelled data. The data used in this project was provided by the client. Augmentation methods can be used to artificially expand the dataset.
+
+### Phase 2: Data Understanding
+
+The data provided by the client consists of 2104 images of healthy cherry leaves and 2104 mildew infected cherry leaves. The format of all files in the dataset is jpg. Data visualization techniques such as creating a montage of a subset of imaged of each label will help to start understanding the dataset. Visualizing examples from each label will help to become familiar with the data, and will give an initial idea of the quality and suitability of the data. Calculating the average and standard deviation from the array values of the images will highlight patterns and correlations in the data and help to verify the quality of the data. Studying the difference between the average images of each label can provide additional insight to how the labels differ from each other.
+
+### Phase 3: Data Preparation
+
+The data quality can be explored by checking for irrelevant, non-image data files. Data cleaning will remove any non-image data files from the dataset. The data will then be split into three subsets; a training set which will be used to train the model, a validation set which will be used to evaluate the model performance during training and a test set which will be used to evaluate the models performance post training. The image shape of the data will also be reduced to ensure model can be trained in a suitable timeframe. Augmentation of the data will artificially expand the dataset and provide additional data on which to train a machine learning model, helping to reduce the risk of overfitting the data.
+
+### Phase 4: Modelling
+
+Augmentation of the training image dataset using the Keras class ImageDataGenerator will increase the amount of data available for training the model by generating batches of images that are versions of existing images that have been augmented in various ways such as rotated, flipped and zoomed. Image augmentation increases the number of images with different combinations of patterns while training, giving the model a wider variety of data features to learn from, thus increasing model performance.
+
+To begin the model design process an initial, simple model will be defined and its performance evaluated to provide a starting point for optimization using [KerasTuner](https://keras.io/keras_tuner/). Aspects of the architecture and the hyperparameters of the model will be defined dynamically during model building, resulting in a final optimized model. The tuning process can be visualized using [Tensorboard](https://www.tensorflow.org/tensorboard), a tool provided with TensorFlow that logs events such as metrics summary plots and training graph visualization. The final optimized model will be retrained and evaluated, then tested using the test dataset.
+
+### Phase 5: Evaluation
+
+The training history of the model can be evaluated by plotting the learning curves of the accuracy and loss metrics. This will show changes in learning performance over the course of the training process and indicate if the model is over-fitting, under-fitting or well-fit to the data set.
+
+An evaluation of the model performance on a test set of data that the model has not seen before will give an indication of how well the model will perform in a real-world setting.
+
+The model performance will also be evaluated using the following classification metrics to further analyse the model performance and the ways in which it fails and succeeds:
+* Confusion matrix
+* Classification report
+* AUC - ROC curve
+
+Finally, the model will be tested by making a prediction on images taken from the test set to check if the prediction matches the expected outcome.
+
+### Phase 6: Deployment
+
+The client has requested a dashboard and will access the delivered data study and ML system via a Streamlit application user interface that includes multiple pages for the results of the visual study, the classifier, model performance metrics and useful project information.
+
+The results of the study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew will be displayed on a dedicated dashboard page including plots produced as part of the study and a brief statement detailing the conclusions of each plot.
+
+The classifier page is required to enable the upload of sample images for classification, display the uploaded images and the prediction results as a prediction statement and probability associated with this statement and to produce a table with image name and prediction results that can be downloaded via a download button.
+
+The model performance page will include plots displaying plots of performance metrics and a brief statements detailing the conclusions of each plot.
+
+The dashboard will include a project summary page detailing the dataset used and the client's requirements, and a hypothesis page detailing the project hypotheses and validation methods.
+
+The dashboard will be deployed with Heroku, a cloud platform used to deploy and monitor applications.
 
 ## Dataset Content
 
