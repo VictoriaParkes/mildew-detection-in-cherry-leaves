@@ -313,7 +313,7 @@ The hyperparameters used in each trial and the performance metric values acheive
 
 ### Page 1: Project Summary
 
-* Project summary
+* Summary of the project giving general information about powdery mildew, the dataset used and the business requirements.
   * General Information: Powdery mildew of sweet and sour cherry is caused by Podosphaera clandestina, an obligate biotrophic fungus. Mid- and late-season sweet cherry (Prunus avium) cultivars are commonly affected, rendering them unmarketable due to the covering of white fungal growth on the cherry surface ([Claudia Probst and Gary Grove (WSU Plant Pathology), Cherry Powdery Mildew](https://treefruit.wsu.edu/crop-protection/disease-management/cherry-powdery-mildew/)).
   * Project Dataset: The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species.
   * Link to the README.md file for additional information about the project.
@@ -321,8 +321,9 @@ The hyperparameters used in each trial and the performance metric values acheive
     1. The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
     2. The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
-### Page 2: 
-* Leaf Visualization Study
+### Page 2: Leaf Visualization Study
+
+* Introduction to the data visualization study and the hypothesis, information detailing the signs of powdery mildew infection and the results of the study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
   * Answers business requirement 1:
     * Introduction:
       * A study conducted using conventional data analysis to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
@@ -338,9 +339,11 @@ The hyperparameters used in each trial and the performance metric values acheive
         * White powdery residue, which is a mixture of the fungal mycelium and spores on leaves and fruit
     * Check box 1: Analysis of average images and variability images for each class (healthy or powdery mildew)
     * Check box 2: Analysis of the differences between average healthy and average powdery mildew cherry leaves
-    * Check box 3: an image montage for each class
+    * Check box 3: A selectbox to select image label, and a button to create image montage of selected label.
 
-* Powdery Mildew Detection
+### Page 3: Powdery Mildew Detection
+
+* An introduction to the ML system and the associated hypothesis, information about collecting leaf samples and a link to download a set of cherry leaf images for live prediction and a User Interface with a file uploader widget for live mildew prediction.
   * Answers business requirement 2:
     * Introduction:
       * ML system that is capable of predicting whether a cherry leaf is healthy or contains powdery mildew.
@@ -353,7 +356,10 @@ The hyperparameters used in each trial and the performance metric values acheive
       * the image and a prediction statement, indicating if a cherry leaf is healthy or contains powdery mildew and the probability associated with this statement.
       * A table with the image name and prediction results, and a download button to download the table.
 
-* Project Hypotheses
+### Page 4: Project Hypotheses
+
+* A page detailing the project hypotheses, the validation methods and the conclusions made.
+
   * Hypothesis 1
     * Hypothesis 1: The leaves of plants that contain powdery mildew have clear signs of infection, typically white powdery patches of fungus on the surface of the leaf, differentiating them from healthy leaves.
     * Validation of hypothesis 1 was achieved using exploratory data analysis methods. The 'mean' and 'standard deviation' images for healthy cherry leaves and cherry leaves that contain powdery mildew were plotted using 30 images for each label. The pixel values were normalized and a plot for average image and a plot for variability in the images were created for both healthy and powdery_mildew labelled images.
@@ -365,10 +371,12 @@ The hyperparameters used in each trial and the performance metric values acheive
       * Studying the mean and variability of images per label highlighted that a mildew infected cherry leaves exhibit more variation across the surface of the leaf. However, the study did not highlight any distinct patterns that could be used to intuitively differentiate between healthy and infected leaves.
       * Studying the difference between average healthy and average powdery mildew cherry leaves did not highlight patterns where we could intuitively differentiate one from another.
       * The image montage can be used to visually identify differences between a healthy leaf and a mildew infected one, and highlight typical signs of mildew infection.
+
   * Hypothesis 2
     * Hypothesis 2: Using the ML system developed for this project, Farmy and Food's employee's will not need to have the botanical expertise needed to diagnose powdery mildew on cherry leaf samples to correctly identify infected trees.
     * Validation of hypothesis 2 was achieved by creating a convolutional neural network that is capable of distinguishing between healthy and powdery mildew infected cherry tree leaves. The model requires users to provide only an image of a cherry tree leaf and will give a prediction of if the leaf is infected with mildew or not.
     * Conclusion: The user does not need to provide any other information to the model, therefore does not any botanical expertise to successfully use the model.
+
   * Hypothesis 3
     * Hypothesis 3: Reliable predictions can be made to determine if a given leaf contains powdery mildew or is healthy, with a degree of 97% accuracy.
     * Validation of hypothesis 3 was achieved using model performance and classification metrics.
@@ -381,7 +389,9 @@ The hyperparameters used in each trial and the performance metric values acheive
       * The f1-score measures Recall and Precision together using Harmonic Mean. It gives the average value for Recall and Precision.
       * ROC (Receiver Operating Characteristic) is a probability curve and is used to calculate the AUC (Area Under Curve) value. The AUC value represents the degree or measure of separability, which is the models capability to distinguish between classes. The AUC value achieved in this evaluation report shows that the model has a high capability to distinguish between classes.
 
-* Model Performance
+### Page 5: Model Performance
+
+* Page displaying the model performance.
   * Train, Validation and Test Set: Labels Frequencies
     * The data was split into 3 sub-datasets to help prevent over or underfitting during ML model training, as follows:
       * Labels Distributions Bar Chart
