@@ -49,6 +49,10 @@ To log into the Heroku toolbelt CLI:
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
+# Powdery Mildew Detector
+
+![Mockup Screenshots](docs/images/mockup-screenshots.png)
+
 ## Development Process
 
 This project was developed using the Cross Industry Standard Process for Data Mining (CRISP-DM) workflow, as a set of  guidelines to plan and organise the project. CRISP-DM is a process model with six phases covering the full data science life cycle; business understanding, data understanding, data preparation, modelling, evaluation and deployment. 
@@ -254,6 +258,43 @@ During the search, the validation accuracy was monitored to determine the model 
 Tensorboard is an application that is used to visualize and monitor the model training process and was used in this project to view the training progress and hyperparameters used in each trial of the KerasTuner hyperparameter search. The accuracy and loss of each model training trial can be easily compared using the charts plotted on the scalars page of the TensorBoard interface and the hyperparameters and metrics can be compared on the Hparams page.
 
 The model with the best validation accuracy and lowest validation loss was selected and the model was retrained using the hyperparameter values used in the trial of the optimization process.
+
+<details>
+<summary>Tensorboard Logs</summary>
+<br>
+The training accuracy and loss metrics for all trials can be viewed and compared in the scalars view of the Tensorboard dashboard. The metrics of each trial can be plotted in one graph or individual trial metrics can be plotted separately.
+
+  <details>
+  <summary>Loss and Accuracy Plots for All Trials</summary>
+
+  ![Model training accuracy for all trials](docs/images/tensorboard-epoch-accuracy.png)
+  ![Model training loss for all trials](docs/images/tensorboard-epoch-loss.png)
+  </details>
+<br>
+Trial 8 was selected as the best performing model because it resulted in the highest validation accuracy (1.0000) with a smooth learning curve and the lowest validation loss (0.0019566).
+
+  <details>
+  <summary>Loss and Accuracy Plots for Trial 8</summary>
+  
+  ![Model training accuracy for all trials](docs/images/tensorboard-epoch-accuracy-trial-8.png)
+  ![Model training loss for all trials](docs/images/tensorboard-epoch-loss-trial-8.png)
+  </details>
+<br>
+The hyperparameters used in each trial and the performance metric values acheived can also be viewed as a table or a parallel coordinates plot, in the hparams view of the Tensorboard dashboard. This can be used to view the range of hyperparameter values and combinations used in the trials.
+
+  <details>
+  <summary>Hparams Table</summary>
+  
+  ![Hparams table hyperparamter values](docs/images/tensorboard-hparams.png)
+  ![Hparams table performance metric values](docs/images/tensorboard-hparams-metrics.png)
+  </details>
+    <details>
+  <summary>Hparams Parallel Coordinates Plot</summary>
+  
+  ![Hparams Parallel Coordinates Plot](docs/images/tensorboard-hparams-parallel-coordinates.png)
+  </details>
+
+</details>
 
 #### References
 
