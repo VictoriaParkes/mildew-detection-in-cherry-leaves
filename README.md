@@ -411,8 +411,12 @@ The hyperparameters used in each trial and the performance metric values acheive
     * Generalised Performance on Test Set Table
       * The evaluation of the model over the data test set gave a generalized loss of less than 1% and accuracy of more than 99%, which more than satisfies the clients requirement of 97% accuracy.
 
-## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were unfixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable for consideration, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+## Bugs
+
+* As part of optimizing the ML model, different activation functions for the hidden layers were tested. Attempting to train the model using the sigmoid or tanH activation functions repeatedly resulted in the kernel dying. These activation functions are computationally expensive, as they contain an exponential term. Therefore computational cost was prioritized when choosing activation functions to help avoid the problem of crashes during training.
+
+[(Leonid Datta (2020), A Survey on Activation Functions and their relation with Xavier and He Normal Initialization)](https://arxiv.org/pdf/2004.06632.pdf)
+
 
 ## Deployment
 ### Heroku
