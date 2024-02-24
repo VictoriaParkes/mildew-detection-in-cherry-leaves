@@ -434,10 +434,18 @@ The hyperparameters used in each trial and the performance metric values acheive
 
 
 ## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries used in the project and provide an example(s) of how you used these libraries.
 
+* numpy - for creating and manipulating arrays
+* pandas - for creating DataFrames to store the dataset
+* matplotlib - setting plot attributes such as size, title and labels and saving plots
+* Seaborn - creating plots and setting plot style
+* Streamlit - for creating the dashboard
+* Scikit-learn - for calulating model classification metrics
+* Keras: used to define and train model
+* Tensorflow - the backend for keras, used to perform computations needed for model training
+* KerasTuner - for model hyperparameter tuning
 
-## Credits 
+## Credits
 
 * In this section, you need to reference where you got your content, media and from where you got extra help. It is common practice to use code from other repositories and tutorials. However, it is necessary to be very specific about these sources to avoid plagiarism. 
 * You can break the credits section up into Content and Media, depending on what you have included in your project. 
