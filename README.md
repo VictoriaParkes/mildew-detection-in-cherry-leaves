@@ -447,8 +447,25 @@ The hyperparameters used in each trial and the performance metric values acheive
 
 ## Credits
 
-* In this section, you need to reference where you got your content, media and from where you got extra help. It is common practice to use code from other repositories and tutorials. However, it is necessary to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+* Information about powdery mildew, identification and sample collecting used on the dashboard was taken from [Claudia Probst and Gary Grove (WSU Plant Pathology), Cherry Powdery Mildew](https://treefruit.wsu.edu/crop-protection/disease-management/cherry-powdery-mildew/).
+* Lessons from [Code Institute's Full Stack Developer Course](https://codeinstitute.net/full-stack-software-development-diploma/) were frequently referred to in the development of this project.
+* Code for the app pages for the Streamlit dashboard, and data collection and data visualization jupiter notebooks was taken from Code Institute's Malaria Detector walkthrough project and modified to suite this project.
+* Optimizing the model was achieved using the following sources:
+  * [Optimizing Neural Network Structures with Keras-Tuner](https://pythonprogramming.net/keras-tuner-optimizing-neural-network-tutorial/)
+  * [KerasTuner Guide](https://keras.io/guides/keras_tuner/)
+  * [TensorBoard guide](https://www.tensorflow.org/tensorboard/get_started)
+  * [Francois Chollet (2021), Deep Learning with Python](https://sourestdeeds.github.io/pdf/Deep%20Learning%20with%20Python.pdf)
+* Documentation for the libraries used was frequently referred to in the development of the project:
+  * [Keras](https://keras.io/2.15/api/)
+  * [Tensorflow](https://www.tensorflow.org/versions/r2.6/api_docs)
+  * [Numpy](https://numpy.org/doc/1.19/index.html)
+  * [Pandas](https://pandas.pydata.org/pandas-docs/version/1.1.2/index.html)
+  * [Matplotlibs](https://matplotlib.org/3.3.1/api/index.html)
+  * [Seaborn](https://seaborn.pydata.org/archive/0.11/index.html)
+  * [SciKit-Learn](https://scikit-learn.org/0.24/modules/classes.html#sklearn-metrics-metrics)
+
+  
+  
 
 ### Content 
 
