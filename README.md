@@ -421,17 +421,22 @@ The hyperparameters used in each trial and the performance metric values acheive
 ## Deployment
 ### Heroku
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
+* The App live link is: https://mildew-detection-vjp-e70ca88c0216.herokuapp.com/ 
 * The project was deployed to Heroku using the following steps.
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file. 
+1. The Heroku Command Line Interface (CLI) was installed using the following command in the workspace terminal:
 
+    `$ npm install -g heroku`
+2. After installing the CLI, the login command was run as follows:
+
+    `$ heroku login`
+3. An app was created with the region set to Europe and the Heroku stack set to Heroku-20 using the following command:
+
+    `$ heroku create -a mildew-detection-vjp --region eu --stack heroku-20`
+
+4. To deploy the app to Heroku, the git push command was used to push the code from the local repository’s main branch to the heroku remote as follows:
+
+    `$ git push heroku main`
 
 ## Main Data Analysis and Machine Learning Libraries
 
@@ -463,22 +468,3 @@ The hyperparameters used in each trial and the performance metric values acheive
   * [Matplotlibs](https://matplotlib.org/3.3.1/api/index.html)
   * [Seaborn](https://seaborn.pydata.org/archive/0.11/index.html)
   * [SciKit-Learn](https://scikit-learn.org/0.24/modules/classes.html#sklearn-metrics-metrics)
-
-  
-  
-
-### Content 
-
-- The text for the Home page was taken from Wikipedia Article A.
-- Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/).
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site.
-- The images used for the gallery page were taken from this other open-source site.
-
-
-
-## Acknowledgements (optional)
-* Thank the people that provided support throughout this project.
