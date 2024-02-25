@@ -1,0 +1,6 @@
+README.md
+.gitpod.yml
+app_pages/__pycache__/*
+.github/*
+docs/*
+jupyter_notebooks/*
