@@ -176,7 +176,7 @@ Conclusions:
 
 The model used in this project is a convolutional neural network(CNN), which is an example of a deep learning model. The CNN model is a regularized type of feed-forward neural network that learns feature engineering by itself via filters (or kernel) optimization. These filter enable convolutional networks to identify patterns in small sections of an image and later recognize that pattern in a different location of other images.
 
-Keras was used to implement the model, this is a high-level neural networks API. It provides a user-friendly interface for creating and training neural networks using lower-level backends such as Tensorflow that enable fast computations.
+Keras was used to implement the model, this is a high-level neural networks API. It provides a user-friendly interface for creating and training neural networks using lower-level backends such as TensorFlow that enable fast computations.
 
 To simplify the process of building the neural network model, the Keras sequential class was used. This is a linear stack of layers which enable the creation of neural network model layers in a step-by-step fashion.
 Each layer added to the sequential model is connected to the previous one, forming a sequential chain. This makes it easy to create and understand simple models and is
@@ -271,7 +271,7 @@ The hyperparameters used in each trial and the performance metric values acheive
 4. [Activation functions in Neural Networks](https://www.geeksforgeeks.org/activation-functions-neural-networks/)
 5. [Backpropagation in Data Mining](https://www.geeksforgeeks.org/backpropagation-in-data-mining/)
 6. [Keras guide: The high-level API for TensorFlow](https://www.tensorflow.org/guide/keras)
-7. [Tensorflow documentation: tf.keras.preprocessing.image.ImageDataGenerator](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator)
+7. [TensorFlow documentation: tf.keras.preprocessing.image.ImageDataGenerator](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator)
 8. [Keras guide: Hyperparameter Tuning](https://keras.io/guides/keras_tuner/)
 9. [Tensorboard guide](https://www.tensorflow.org/tensorboard/get_started)
 
@@ -412,16 +412,16 @@ The hyperparameters used in each trial and the performance metric values acheive
 * matplotlib - setting plot attributes such as size, title and labels and saving plots
 * Seaborn - creating plots and setting plot style
 * Streamlit - for creating the dashboard
-* Scikit-learn - for calulating model classification metrics
+* Scikit-learn - for calculating model classification metrics
 * Keras: used to define and train model
-* Tensorflow - the backend for keras, used to perform computations needed for model training
+* TensorFlow - the backend for Keras, used to perform computations needed for model training
 * KerasTuner - for model hyperparameter tuning
 
 ## 13. Credits
 
 * Information about powdery mildew, identification and sample collecting used on the dashboard was taken from [Claudia Probst and Gary Grove (WSU Plant Pathology), Cherry Powdery Mildew](https://treefruit.wsu.edu/crop-protection/disease-management/cherry-powdery-mildew/).
 * Lessons from [Code Institute's Full Stack Developer Course](https://codeinstitute.net/full-stack-software-development-diploma/) were frequently referred to in the development of this project.
-* Code for the app pages for the Streamlit dashboard, and data collection and data visualization jupiter notebooks was taken from Code Institute's Malaria Detector walkthrough project and modified to suite this project.
+* Code for the app pages for the Streamlit dashboard, and data collection and data visualization Jupyter notebooks was taken from Code Institute's Malaria Detector walkthrough project and modified to suite this project.
 * Optimizing the model was achieved using the following sources:
   * [Optimizing Neural Network Structures with Keras-Tuner](https://pythonprogramming.net/keras-tuner-optimizing-neural-network-tutorial/)
   * [KerasTuner Guide](https://keras.io/guides/keras_tuner/)
@@ -429,7 +429,7 @@ The hyperparameters used in each trial and the performance metric values acheive
   * [Francois Chollet (2021), Deep Learning with Python](https://sourestdeeds.github.io/pdf/Deep%20Learning%20with%20Python.pdf)
 * Documentation for the libraries used was frequently referred to in the development of the project:
   * [Keras](https://keras.io/2.15/api/)
-  * [Tensorflow](https://www.tensorflow.org/versions/r2.6/api_docs)
+  * [TensorFlow](https://www.tensorflow.org/versions/r2.6/api_docs)
   * [Numpy](https://numpy.org/doc/1.19/index.html)
   * [Pandas](https://pandas.pydata.org/pandas-docs/version/1.1.2/index.html)
   * [Matplotlibs](https://matplotlib.org/3.3.1/api/index.html)
