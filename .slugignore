@@ -4,3 +4,6 @@ app_pages/__pycache__/*
 .github/*
 docs/*
 jupyter_notebooks/*
+outputs/v1/*
+outputs/v3/*
+.devcontainer/*
