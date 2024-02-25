@@ -1,59 +1,26 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-## Codeanywhere Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Codeanywhere Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Codeanywhere Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use. 
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-1. Log into <a href="https://app.codeanywhere.com/" target="_blank" rel="noreferrer">CodeAnywhere</a> with your GitHub account.
-
-1. On your Dashboard, click on the New Workspace button
-
-1. Paste in the URL you copied from GitHub earlier
-
-1. Click Create
-
-1. Wait for the workspace to open. This can take a few minutes.
-
-1. Open a new terminal and <code>pip3 install -r requirements.txt</code>
-
-1. In the terminal type <code>pip3 install jupyter</code>
-
-1. In the terminal type <code>jupyter notebook --NotebookApp.token='' --NotebookApp.password=''</code> to start the jupyter server.
-
-1. Open port 8888 preview or browser
-
-1. Open the jupyter_notebooks directory in the jupyter webpage that has opened and click on the notebook you want to open.
-
-1. Click the button Not Trusted and choose Trust.
-
-Note that the kernel says Python 3. It inherits from the workspace so it will be Python-3.8.12 as installed by our template. To confirm this you can use <code>! python --version</code> in a notebook code cell.
-
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
 # Powdery Mildew Detector
 
 ![Mockup Screenshots](docs/images/mockup-screenshots.png)
 
-## Development Process
+[The **Live Application** can be found here](https://mildew-detection-vjp-e70ca88c0216.herokuapp.com/)
+
+## Contents
+
+1. [Development Process](#1-development-process)
+2. [Dataset Content](#2-dataset-content)
+3. [Business Requirements](#3-business-requirements)
+4. [Hypothesis and how to validate?](#4-hypothesis-and-how-to-validate)
+5. [The rationale to map the business requirements to the Data Visualisations and ML tasks](#5-the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
+6. [ML Business Case](#6-ml-business-case)
+7. [Hypothesis Validation and Conclusions](#7-hypothesis-validation-and-conclusions)
+8. [Model Design](#8-model-design)
+9. [Dashboard Design (Streamlit App User Interface)](#9-dashboard-design-streamlit-app-user-interface)
+10. [Bugs](#10-bugs)
+11. [Deployment](#11-deployment)
+12. [Main Data Analysis and Machine Learning Libraries](#12-main-data-analysis-and-machine-learning-libraries)
+13. [Credits](#13-credits)
+
+## 1. Development Process
 
 This project was developed using the Cross Industry Standard Process for Data Mining (CRISP-DM) workflow, as a set of  guidelines to plan and organise the project. CRISP-DM is a process model with six phases covering the full data science life cycle; business understanding, data understanding, data preparation, modelling, evaluation and deployment. 
 
@@ -117,12 +84,12 @@ The dashboard will include a project summary page detailing the dataset used and
 
 The dashboard will be deployed with Heroku, a cloud platform used to deploy and monitor applications.
 
-## Dataset Content
+## 2. Dataset Content
 
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
 * The dataset contains +4 thousand images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew, a fungal disease that affects many plant species. The cherry plantation crop is one of the finest products in their portfolio, and the company is concerned about supplying the market with a compromised quality product.
 
-## Business Requirements
+## 3. Business Requirements
 
 The cherry plantation crop from Farmy & Foods is facing a challenge where their cherry plantations have been presenting powdery mildew. Currently, the process is manual verification if a given cherry tree contains powdery mildew. An employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If there is powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute.  The company has thousands of cherry trees, located on multiple farms across the country. As a result, this manual process is not scalable due to the time spent in the manual process inspection.
 
@@ -131,7 +98,7 @@ To save time in this process, the IT team suggested an ML system that detects in
 * 1 - The client is interested in conducting a study to visually differentiate a healthy cherry leaf from one with powdery mildew.
 * 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
-## Hypothesis and how to validate?
+## 4. Hypothesis and how to validate?
 
 1. The leaves of plants that contain powdery mildew have clear signs of infection, typically white powdery patches of fungus on the surface of the leaf, differentiating them from healthy leaves.
    * How to validate: Conventional data analysis can be used to conduct a study to visually differentiate a healthy cherry leaf from one that contains powdery mildew. An average image study and an image montage can be used in this investigation.
@@ -142,7 +109,7 @@ To save time in this process, the IT team suggested an ML system that detects in
 3. Reliable predictions can be made to determine if a given leaf contains powdery mildew or is healthy, with a degree of 97% accuracy.
    * How to validate: Performance metrics can be used to evaluate the performance of the ML model. Evaluating the model accuracy metric will confirm the degree of model accuracy. Classification performance metrics such as the confusion matrix, classification report can be used to evaluate the frequency with which the model correctly predicted the class of data in a test dataset.
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
+## 5. The rationale to map the business requirements to the Data Visualisations and ML tasks
 
 * **Business Requirement 1**: Data Visualisation
   The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
@@ -157,7 +124,7 @@ To save time in this process, the IT team suggested an ML system that detects in
   * As a client I want to predict if a given cherry leaf is healthy or contains powdery mildew so that I do not supply the market with a product of compromised quality.
   * As a client I want to build a binary classifier to predict the class of the output variable, and generate model performance reports to evaluate the accuracy of the predictions made.
 
-## ML Business Case
+## 6. ML Business Case
 
 * We want a ML model to predict if the cherry leaf tree is healthy or has powdery mildew. It is a supervised model, a 2-class, single-label, classification model.
 * Our ideal outcome is to provide employees at Farmy & Foods  a tool for faster and more reliable diagnostic analysis for the detection of the powdery mildew on the cherry plantation crop, that can be easily replicated for use with all other crops grown by the business.
@@ -168,7 +135,7 @@ To save time in this process, the IT team suggested an ML system that detects in
 * The training data to fit the model comes from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). It is a balanced dataset containing 4208 labelled images of cherry leaves divided into 2 subsets of healthy and mildew containing leaf images to be used for model training using supervised learning. The data format is .jpg files.
   * Train data - target: healthy or powdery mildew affected; features: all images.
 
-## Hypothesis Validation and Conclusions
+## 7. Hypothesis Validation and Conclusions
 
 **Hypothesis 1**: The leaves of plants that contain powdery mildew have clear signs of infection, typically white powdery patches of fungus on the surface of the leaf, differentiating them from healthy leaves.
 
@@ -205,7 +172,7 @@ Conclusions:
 * The f1-score measures Recall and Precision together using Harmonic Mean. It give the average value for Recall and Precision.
 * ROC (Receiver Operating Characteristic) is a probability curve and is used to calculate the AUC (Area Under Curve) value. The AUC value represents the degree or measure of separability, which is the models capability to distinguish between classes. The AUC value achieved in this evaluation report shows that the model has a high capability to distinguish between classes.
 
-## Model Design
+## 8. Model Design
 
 The model used in this project is a convolutional neural network(CNN), which is an example of a deep learning model. The CNN model is a regularized type of feed-forward neural network that learns feature engineering by itself via filters (or kernel) optimization. These filter enable convolutional networks to identify patterns in small sections of an image and later recognize that pattern in a different location of other images.
 
@@ -309,7 +276,7 @@ The hyperparameters used in each trial and the performance metric values acheive
 9. [Tensorboard guide](https://www.tensorflow.org/tensorboard/get_started)
 
 
-## Dashboard Design (Streamlit App User Interface)
+## 9. Dashboard Design (Streamlit App User Interface)
 
 ### Page 1: Project Summary
 
@@ -411,14 +378,14 @@ The hyperparameters used in each trial and the performance metric values acheive
     * Generalised Performance on Test Set Table
       * The evaluation of the model over the data test set gave a generalized loss of less than 1% and accuracy of more than 99%, which more than satisfies the clients requirement of 97% accuracy.
 
-## Bugs
+## 10. Bugs
 
 * As part of optimizing the ML model, different activation functions for the hidden layers were tested. Attempting to train the model using the sigmoid or tanH activation functions repeatedly resulted in the kernel dying. These activation functions are computationally expensive, as they contain an exponential term. Therefore computational cost was prioritized when choosing activation functions to help avoid the problem of crashes during training.
 
 [(Leonid Datta (2020), A Survey on Activation Functions and their relation with Xavier and He Normal Initialization)](https://arxiv.org/pdf/2004.06632.pdf)
 
 
-## Deployment
+## 11. Deployment
 ### Heroku
 
 * The App live link is: https://mildew-detection-vjp-e70ca88c0216.herokuapp.com/ 
@@ -438,7 +405,7 @@ The hyperparameters used in each trial and the performance metric values acheive
 
     `$ git push heroku main`
 
-## Main Data Analysis and Machine Learning Libraries
+## 12. Main Data Analysis and Machine Learning Libraries
 
 * numpy - for creating and manipulating arrays
 * pandas - for creating DataFrames to store the dataset
@@ -450,7 +417,7 @@ The hyperparameters used in each trial and the performance metric values acheive
 * Tensorflow - the backend for keras, used to perform computations needed for model training
 * KerasTuner - for model hyperparameter tuning
 
-## Credits
+## 13. Credits
 
 * Information about powdery mildew, identification and sample collecting used on the dashboard was taken from [Claudia Probst and Gary Grove (WSU Plant Pathology), Cherry Powdery Mildew](https://treefruit.wsu.edu/crop-protection/disease-management/cherry-powdery-mildew/).
 * Lessons from [Code Institute's Full Stack Developer Course](https://codeinstitute.net/full-stack-software-development-diploma/) were frequently referred to in the development of this project.
