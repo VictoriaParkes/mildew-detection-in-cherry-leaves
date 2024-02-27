@@ -427,6 +427,7 @@ The hyperparameters used in each trial and the performance metric values acheive
   * [KerasTuner Guide](https://keras.io/guides/keras_tuner/)
   * [TensorBoard guide](https://www.tensorflow.org/tensorboard/get_started)
   * [Francois Chollet (2021), Deep Learning with Python](https://sourestdeeds.github.io/pdf/Deep%20Learning%20with%20Python.pdf)
+* Code for the model evaluation plots was taken and adapted from this repository: https://github.com/cla-cif/Cherry-Powdery-Mildew-Detector/blob/main/jupyter_notebooks/ModellingEvaluating.ipynb
 * Documentation for the libraries used was frequently referred to in the development of the project:
   * [Keras](https://keras.io/2.15/api/)
   * [TensorFlow](https://www.tensorflow.org/versions/r2.6/api_docs)
